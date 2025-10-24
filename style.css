@@ -1,0 +1,77 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+header {
+    background-color: rgb(28, 28, 28);
+    padding: 10px 40px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+h1 {
+    color:aqua;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(146, 255, 224);
+    margin: 0 5px;
+}
+
+input {
+    padding: auto;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+}
+
+textarea {
+    padding: auto;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+}
+
+#about {
+    background-color: rgb(36, 36, 36);
+    padding: 20px 40px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+#skills {
+    background-color: rgb(36, 36, 36);
+    padding: 20px 40px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+#contact {
+    background-color: rgb(36, 36, 36);
+    padding: 20px 40px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto
+}   
+
+.contact-form .input-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.credit {
+    color: gray;
+    font-size: 0.9em;
+}
