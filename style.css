@@ -1,14 +1,50 @@
-body {
-    background-color: black;
-    color: white;
-}
-
 header {
     background-color: rgb(28, 28, 28);
     padding: 10px 40px; 
     display: flex;
     justify-content: space-between; 
     align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(146, 255, 224);
+    margin: 0 5px;
+}
+
+.credit {
+    color: gray;
+    font-size: 0.9em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+    padding: 20px;
+    background-color: rgb(28, 28, 28);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -23,6 +59,7 @@ a {
 }
 
 input {
+    display: flex;
     padding: auto;
     margin: 5px 0;
     border: none;
@@ -50,6 +87,13 @@ textarea {
     border-radius: 10px;
 }
 
+.tools {
+    display: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
 #contact {
     background-color: rgb(36, 36, 36);
     padding: 20px 40px;
@@ -74,4 +118,9 @@ textarea {
 .credit {
     color: gray;
     font-size: 0.9em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
 }

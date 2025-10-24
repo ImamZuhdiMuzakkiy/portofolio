@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Certificate</title>
     <style>
-        body {
-            background-color: black;
-            color: white;
-        }
-
         header {
             background-color: rgb(28, 28, 28);
             padding: 10px 40px; 
@@ -27,6 +22,36 @@
         .credit {
             color: gray;
             font-size: 0.9em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: black;
+            color: white;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            background-color: rgb(28, 28, 28);
+            width: 100%;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -58,7 +83,7 @@
     </main>
     <footer>
         <center>
-            <p class="credit">&copy; 2024 Imam Zuhdi Muzakkiy. All rights reserved.</p>
+            <p class="credit">&copy; 2025 Imam Zuhdi Muzakkiy. All rights reserved.</p>
         </center>
     </footer>
 </body>
