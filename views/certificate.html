@@ -13,6 +13,11 @@
             align-items: center;
         }
 
+        nav ul {
+            display: flex;
+            gap: 15px;
+        }
+
         a {
             text-decoration: none;
             color: rgb(146, 255, 224);
@@ -46,6 +51,21 @@
             flex: 1;
         }
 
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card {
+            display: inline-block;
+            background-color: #1c1c1c;
+            border: 1px solid #333;
+            border-radius: 8px;
+            margin: 20px auto;
+            padding: 15px;
+            max-width: 350px;
+        }
+
         footer {
             margin-top: auto;
             padding: 20px;
@@ -61,24 +81,46 @@
                 <img src="..\images\Logo imam.png" alt="">
         </a>
         <nav>
-            <a href="project.html">Project</a>
-            <a href="certificate.html">Certificate</a>
-            <a href="hobby.html">Hobby</a>
+            <ul>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="certificate.html">Certificate</a></li>
+                <li><a href="hobby.html">Hobby</a></li>
+            </ul>
         </nav>
     </header>
     <main>
-        <section>
-            <center>
-                <article>
-                    <h1>My Certificates</h1>
-                        <ul>
-                            <li>Certificate 1: UI/UX Design Specialization - Completed a comprehensive UI/UX design course covering user research, wireframing, prototyping, and usability testing.</li>
-                            <li>Certificate 2: Full-Stack Web Development - Earned a certificate for mastering front-end and back-end web development technologies including HTML, CSS, JavaScript, React.js, and Node.js.</li>
-                            <li>Certificate 3: Figma Design Essentials - Successfully finished a course on Figma, learning how to create interactive prototypes and collaborative design projects.</li>
-                            <li>Certificate 4: Responsive Web Design - Achieved certification in building responsive and mobile-friendly websites using modern web design principles and techniques.</li>
-                        </ul>
-                </article>
-            </center>
+        <section class="content">
+            <h1>My Certificates</h1>
+            <div class="card">
+                <div class="card-body">
+                    <img src="..\images\Sertif1.png" alt="" width="300px">
+                </div>
+                <div class="card-title">Certificate 1: UI/UX Design Specialization</div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="..\images\Sertif1.png" alt="" width="300px">
+                </div>
+                <div class="card-title">Certificate 1: UI/UX Design Specialization</div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="..\images\Sertif1.png" alt="" width="300px">
+                </div>
+                <div class="card-title">Certificate 1: UI/UX Design Specialization</div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="..\images\Sertif1.png" alt="" width="300px">
+                </div>
+                <div class="card-title">Certificate 1: UI/UX Design Specialization</div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="..\images\Sertif1.png" alt="" width="300px">
+                </div>
+                <div class="card-title">Certificate 1: UI/UX Design Specialization</div>
+            </div>
         </section>
     </main>
     <footer>

@@ -13,6 +13,11 @@
             align-items: center;
         }
 
+        nav ul {
+            display: flex;
+            gap: 15px;
+        }
+
         a {
             text-decoration: none;
             color: rgb(146, 255, 224);
@@ -46,6 +51,21 @@
             flex: 1;
         }
 
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card {
+            display: inline-block;
+            background-color: #1c1c1c;
+            border: 1px solid #333;
+            border-radius: 8px;
+            margin: 20px auto;
+            padding: 15px;
+            max-width: 350px;
+        }
+
         footer {
             margin-top: auto;
             padding: 20px;
@@ -61,24 +81,46 @@
                 <img src="..\images\Logo imam.png" alt="">
         </a>
         <nav>
-            <a href="project.html">Project</a>
-            <a href="certificate.html">Certificate</a>
-            <a href="hobby.html">Hobby</a>
+            <ul>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="certificate.html">Certificate</a></li>
+                <li><a href="hobby.html">Hobby</a></li>
+            </ul>
         </nav>
     </header>
     <main>
-        <section>
-            <center>
-                <article>
-                    <h1>My Projects</h1>
-                        <ul>
-                            <li>Project 1: Portfolio Website - A personal portfolio website showcasing my skills and projects using HTML, CSS, and JavaScript.</li>
-                            <li>Project 2: E-commerce Platform - Developed a full-stack e-commerce application with React.js for the frontend and Node.js for the backend.</li>
-                            <li>Project 3: Mobile App Design - Created a user-friendly mobile app design prototype using Figma for a fitness tracking application.</li>
-                            <li>Project 4: Blog Website - Built a responsive blog website with a content management system using Laravel and MySQL.</li>
-                        </ul>
-                </article>
-            </center>
+        <section class="content">
+            <h1>My Projects</h1>
+            <div class="card">
+                <div class="card-body">
+                    <img src="..\images\project1.webp" alt="" width="300px">
+                </div>
+                <div class="card-title">Project 1: Greeve (Green Environment)</div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="..\images\project1.webp" alt="" width="300px">
+                </div>
+                <div class="card-title">Project 1: Greeve (Green Environment)</div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="..\images\project1.webp" alt="" width="300px">
+                </div>
+                <div class="card-title">Project 1: Greeve (Green Environment)</div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="..\images\project1.webp" alt="" width="300px">
+                </div>
+                <div class="card-title">Project 1: Greeve (Green Environment)</div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <img src="..\images\project1.webp" alt="" width="300px">
+                </div>
+                <div class="card-title">Project 1: Greeve (Green Environment)</div>
+            </div>
         </section>
     </main>
     <footer>

@@ -13,6 +13,11 @@
             align-items: center;
         }
 
+        nav ul {
+            display: flex;
+            gap: 15px;
+        }
+
         a {
             text-decoration: none;
             color: rgb(146, 255, 224);
@@ -46,6 +51,21 @@
             flex: 1;
         }
 
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card {
+            display: inline-block;
+            background-color: #1c1c1c;
+            border: 1px solid #333;
+            border-radius: 8px;
+            margin: 20px auto;
+            padding: 15px;
+            max-width: 350px;
+        }
+
         footer {
             margin-top: auto;
             padding: 20px;
@@ -61,25 +81,25 @@
                 <img src="..\images\Logo imam.png" alt="">
         </a>
         <nav>
-            <a href="project.html">Project</a>
-            <a href="certificate.html">Certificate</a>
-            <a href="hobby.html">Hobby</a>
+            <ul>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="certificate.html">Certificate</a></li>
+                <li><a href="hobby.html">Hobby</a></li>
+            </ul>
         </nav>
     </header>
     <main>
-        <section>
-            <center>
-                <article>
-                    <h1>My Hobbies</h1>
-                        <ul>
-                            <li>Photography - Capturing moments and landscapes through the lens of my camera.</li>
-                            <li>Traveling - Exploring new places, cultures, and cuisines around the world.</li>
-                            <li>Reading - Enjoying a variety of genres including fiction, non-fiction, and design-related books.</li>
-                            <li>Cycling - Staying active and exploring the outdoors on my bicycle.</li>
-                            <li>Cooking - Experimenting with new recipes and cooking techniques in the kitchen.</li>
-                        </ul>
-                </article>
-            </center>
+        <section class="content">
+            <h1>My Hobby</h1>
+            <div class="card">
+                <div class="card-body">
+                    <img src="..\images\test.jpeg" alt="" width="300px">
+                </div>
+                <div class="card-body">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ab suscipit illum, aut facere nihil velit praesentium ullam vero possimus cum, deleniti qui enim quae aliquam, voluptas saepe cupiditate amet.</p>
+                </div>
+                <!-- <div class="card-title">Certificate 1: UI/UX Design Specialization</div> -->
+            </div>
         </section>
     </main>
     <footer>
