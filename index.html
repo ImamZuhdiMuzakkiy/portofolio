@@ -32,7 +32,7 @@
         <section id="skills-tools">
             <div class="card">
                 <div class="card-title">
-                    <h2>My Skills</h2>
+                    <h2 id="skill">My Skills</h2>
                 </div>
                 <div class="card-body">
                     <ul>
@@ -47,7 +47,7 @@
             </div>
             <div class="card">
                 <div class="card-title">
-                    <h2>Tools</h2>
+                    <h2 id="tools">Tools</h2>
                 </div>
                 <div class="card-body">
                     <ul>
@@ -92,5 +92,26 @@
             <p class="credit">&copy; 2025 Imam Zuhdi Muzakkiy. All rights reserved.</p>
         </center>
     </footer>
+    <script>
+        document.querySelector("#about img").addEventListener("click", function() {
+            alert("Hello! Thank you for visiting my portfolio. Feel free to explore and reach out if you'd like to connect!");
+        })
+
+        document.querySelector("#about h2").addEventListener("click", function() {
+            window.location.href = "https://imamzuhdim.framer.website/";
+        })
+
+        document.querySelector("#about h1").addEventListener("click",function () {
+            document.querySelector("#about h1").innerHTML = "<img src='https://i.pinimg.com/originals/56/a6/14/56a614261d423da1825452363174c685.gif' alt='' width='200px'>";
+        })
+
+        document.querySelector("#skill").addEventListener("click", function() {
+            document.querySelector("#skill").style.color = "blue";
+        })
+
+        document.querySelector("#tools").addEventListener("click", function() {
+            document.querySelector("#tools").style.color = "green";
+        })
+    </script>
 </body>
 </html>
