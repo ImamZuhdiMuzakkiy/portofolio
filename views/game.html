@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Game</title>
+    <style>
+        header {
+            background-color: rgb(28, 28, 28);
+            padding: 10px 40px; 
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(146, 255, 224);
+            margin: 0 5px;
+        }
+
+        .credit {
+            color: gray;
+            font-size: 0.9em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        html, body, section {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: black;
+            color: white;
+        }
+
+        main, .container {
+            flex: 1;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100%;
+            text-align: center;
+        }
+
+        .opening-game, .game-start, .closed-game {
+            background-color: #1f1f1f;
+            padding: 30px 50px;
+            border-radius: 10px;
+            width: 70%;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
+
+        input[type="radio"] {
+            visibility: hidden;
+        }
+
+        label {
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        input[type="radio"]:checked + label {
+            color: rgb(146, 255, 224);
+            /* font-weight: bold; */
+            text-decoration: underline;
+        }
+
+        button {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #00ffc3;
+            margin: 0 10px;
+            color: black;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .container-choice {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .choices {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* margin: 10px; */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="..\index.html">
+                <img src="..\images\Logo imam.png" alt="">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="certificate.html">Certificate</a></li>
+                <li><a href="hobby.html">Hobby</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="content">
+            <div class="opening-game">
+                <h1>Selamat Datang di QUIZ Game🤭</h1>
+                <p>Siap menguji pengetahuanmu?</p>
+                <button>Mulai Permainan</button>
+            </div>
+            <div class="game-start">
+                <h1 id="question"></h1>
+                <div class="container-choice">
+                    <div class="choices">
+                        <input type="radio" name="choices" data-id="0" id="choice0">
+                        <label for="choice0" id="choiceText0"></label>
+                    </div>
+                    <div class="choices">
+                        <input type="radio" name="choices" data-id="1" id="choice1">
+                        <label for="choice1" id="choiceText1"></label>
+                    </div>
+                    <div class="choices">
+                        <input type="radio" name="choices" data-id="2" id="choice2">
+                        <label for="choice2" id="choiceText2"></label>
+                    </div>
+                    <div class="choices">
+                        <input type="radio" name="choices" data-id="3" id="choice3">
+                        <label for="choice3" id="choiceText3"></label>
+                    </div>
+                    <div class="choices">
+                        <input type="radio" name="choices" data-id="4" id="choice4">
+                        <label for="choice4" id="choiceText4"></label>
+                    </div>
+                </div>
+                <button>Next</button>
+            </div>
+            <div class="closed-game">
+                <img src="" alt="" width="200px">
+                <h1>Terima Kasih Telah Bermain!</h1>
+                <p>Skor Akhir Anda: <span id="finalScore"></span></p>
+                <button>Main Lagi</button>
+            </div>
+        </section>
+    </main>
+    <script>
+        const DB_QUESTIONS = [
+            {
+                question: "Apa ibu kota Indonesia?",
+                choices: ["Jakarta", "Bandung", "Surabaya", "Medan", "Yogyakarta"],
+                answer: 0
+            },
+            {
+                question: "Siapa presiden pertama Indonesia?",
+                choices: ["Willy Salim", "Soekarno", "Joko Widodo", "Habibie", "Gus Dur"],
+                answer: 1
+            },
+            {
+                question: "Apa bahasa resmi Indonesia?",
+                choices: ["Bahasa Indonesia", "Bahasa Jawa", "Bahasa Sunda", "Bahasa Bali", "Bahasa Batak"],
+                answer: 0
+            },
+            {
+                question: "Paling suka nengok ke kanan dan ke kiri, tapi tidak pernah menyebrang jalan. Apakah itu?",
+                choices: ["Pohon", "Orang Tua", "Kipas Angin", "Badut", "Manusia Silver"],
+                answer: 2
+            },
+            {
+                question: "Pohon apa yang paling jauh",
+                choices: ["Pohon Beringin", "Pohon Jati", "Pohon Durian", "Pohon Jarak", "Pohon Palem"],
+                answer: 0
+            },
+        ];
+        
+        const startBtn = document.querySelector(".opening-game button");
+        const nextBtn = document.querySelector(".game-start button");
+        const replayBtn = document.querySelector(".closed-game button");
+        const openingGame = document.querySelector(".opening-game");
+        const gameStart = document.querySelector(".game-start");
+        const closedGame = document.querySelector(".closed-game");
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        // Sembunyikan game-start dan closed di awal
+        gameStart.style.display = "none";
+        closedGame.style.display = "none";
+
+        startBtn.addEventListener("click", () => {
+            openingGame.style.display = "none";
+            gameStart.style.display = "block";
+            showQuestion();
+        });
+
+        function showQuestion() {
+            const q = DB_QUESTIONS[currentQuestion];
+            document.getElementById("question").textContent = q.question;
+
+            q.choices.forEach((choice, i) => {
+                document.getElementById("choiceText" + i).textContent = choice;
+                document.getElementById("choice" + i).checked = false;
+            });
+        }
+
+        nextBtn.addEventListener("click", () => {
+            const choiceSelected = document.querySelector("input[name='choices']:checked");
+
+            if (!choiceSelected) {
+                alert("Pilih jawaban dulu dong!");
+                return;
+            }
+
+            const userAnswer = parseInt(choiceSelected.dataset.id);
+            if (userAnswer === DB_QUESTIONS[currentQuestion].answer) {
+                score += 20;
+            }
+
+            currentQuestion++;
+
+            if (currentQuestion < DB_QUESTIONS.length) {
+                showQuestion();
+            } else {
+                endGame();
+            }
+        });
+
+        replayBtn.addEventListener("click", () => {
+            currentQuestion = 0;
+            score = 0;
+            replayBtn.textContent = "Main Lagi"; //harus ditambahin text content karena tiba-tiba menjadi kosong
+            closedGame.style.display = "none";
+            openingGame.style.display = "block";
+        });
+
+        function endGame() {
+            gameStart.style.display = "none";
+            closedGame.style.display = "block";
+            if(score > 60) {
+                document.querySelector(".closed-game img").src = "https://i.pinimg.com/originals/0d/62/79/0d6279af6ad18436b4514e86153f6265.gif";
+                document.getElementById("finalScore").textContent = score;
+                // document.querySelector(".closed-game button").textContent = "Main Lagi Yuk!";
+            } else {
+                document.querySelector(".closed-game img").src = "https://i.pinimg.com/originals/d9/aa/79/d9aa796c0ba0d0eb22db2a8db886dedc.gif";
+                document.getElementById("finalScore").textContent = score;
+                // document.querySelector(".closed-game button").textContent = "Main Lagi Yuk!";
+            }
+        }
+
+        //pertanyaan untuk mas william, kenapa di bagian button pada closed-game tidak isi "Main Lagi" yang dimana sebelum js nya dijalankan sudah ada tulisan "Main Lagi" di html nya?
+        
+    </script>
+</body>
+</html>
